@@ -1,11 +1,15 @@
-#  n = int(raw_input())
-#     student_marks = {}
-#     for _ in range(n):
-#         line = raw_input().split()
-#         name, scores = line[0], line[1:]
-#         scores = map(float, scores)
-#         student_marks[name] = scores
-#     query_name = raw_input()
+n = int(input())
+student_marks = {}
+for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    
 
-
-print("hello world")
+query_name = input()
+sum = 0 
+for i in student_marks[query_name]:
+   sum = sum + i
+   average = sum/3
+print("{:.2f}".format(average))
+   
